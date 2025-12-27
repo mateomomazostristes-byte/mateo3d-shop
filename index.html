@@ -32,29 +32,17 @@
     <p id="footerText">© 2025 Mateo-3D Shop</p>
   </footer>
 
-  <script>
-    // VARIABLE ÚNICA PARA EL NOMBRE DE LA WEB
-    const NameVar = "Mat-3D Shop";
+  <!-- CONFIG Y JS -->
+  <script src="config.js"></script>
+  <script src="productos.js"></script>
+  <script src="main.js"></script>
 
+  <script>
     // Reemplazar automáticamente el nombre en la web
     document.getElementById("pageTitle").textContent = NameVar;
     document.getElementById("headerTitle").textContent = NameVar;
     document.getElementById("footerText").textContent = `© 2025 ${NameVar}`;
-
-    // Ejemplo para botón comprar dinámico
-    // (asumiendo que más abajo en main.js generás los productos)
-    function generarBotonComprar(productoNombre) {
-      const button = document.createElement("a");
-      button.classList.add("comprar");
-      button.textContent = "Comprar";
-      button.href = `mailto:mateomomazostristes@gmail.com?subject=${NameVar} - ${productoNombre}`;
-      return button;
-    }
-
   </script>
-
-  <script src="productos.js"></script>
-  <script src="main.js"></script>
 
 </body>
 </html>
