@@ -1,10 +1,9 @@
-// Lista de productos
 const productos = [
   {
     nombre: "Organizador de Tarjetas",
     descripcion: "Mantén tus tarjetas ordenadas y a mano.",
     categoria: "organizer",
-    imagen: "https://i.imgur.com/xyz123.png" // reemplazá con tu URL
+    imagen: "https://i.imgur.com/xyz123.png"
   },
   {
     nombre: "Soporte USB",
