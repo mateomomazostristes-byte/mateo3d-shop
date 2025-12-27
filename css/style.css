@@ -1,0 +1,105 @@
+/* PALETA PASTEL - MATEO 3D SHOP */
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* HEADER */
+
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #e9ecef;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2em;
+}
+
+header p {
+  margin: 5px 0 20px;
+  color: #555;
+}
+
+#buscador {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+/* PRODUCTOS */
+
+main {
+  padding: 30px;
+}
+
+#productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.producto {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.producto h3 {
+  margin: 15px 0 10px;
+}
+
+.producto p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* BOTÓN COMPRAR */
+
+.comprar {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #bde0fe;
+  color: #000;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.comprar:hover {
+  background-color: #a2d2ff;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #e9ecef;
+  color: #666;
+}
