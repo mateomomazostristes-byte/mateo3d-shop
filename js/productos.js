@@ -1,9 +1,9 @@
 const productos = [
   {
-    nombre: "Organizador de Tarjetas",
-    descripcion: "Mantén tus tarjetas ordenadas y a mano.",
-    categoria: "organizer",
-    imagen: "https://i.imgur.com/xyz123.png"
+    nombre: "Organizador de SDs y USBs",
+    descripcion: "Mantén tus tarjetas y USBs ordenadas y a mano.",
+    categoria: "organizer" "sd" "usb",
+    imagen: "https://github.com/mateomomazostristes-byte/mateo3d-shop/blob/main/img/usb-sd-organizer.jpeg"
   },
   {
     nombre: "Soporte USB",
@@ -18,3 +18,4 @@ const productos = [
     imagen: "https://i.imgur.com/def789.png"
   }
 ];
+
