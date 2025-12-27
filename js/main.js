@@ -1,51 +1,49 @@
-// CEREBRO DE MATEO-3D SHOP
-// Muestra productos + buscador
+const productList = document.getElementById("product-list");
+const searchInput = document.getElementById("searchInput");
 
-const contenedor = document.getElementById("productos");
-const buscador = document.getElementById("buscador");
-
-function mostrarProductos(lista) {
-  contenedor.innerHTML = "";
-
-  if (lista.length === 0) {
-    contenedor.innerHTML = "<p>No se encontraron productos 😿</p>";
-    return;
-  }
-
-  lista.forEach(p => {
+// Función para renderizar productos
+function renderProductos(lista) {
+  productList.innerHTML = "";
+  lista.forEach(prod => {
     const card = document.createElement("div");
-    card.className = "producto";
+    card.classList.add("product-card");
 
-    card.innerHTML = `
-      <img src="${p.imagen}" alt="${p.nombre}">
-      <h3>${p.nombre}</h3>
-      <p>${p.descripcion}</p>
-      <a class="comprar" href="mailto:mateomomazostristes@gmail.com?subject=${encodeURIComponent(p.nombre)}">
-        Comprar
-      </a>
-    `;
+    const imgDiv = document.createElement("div");
+    imgDiv.classList.add("product-image");
 
-    contenedor.appendChild(card);
+    const img = document.createElement("img");
+    img.src = prod.imagen;
+    img.alt = prod.nombre;
+    imgDiv.appendChild(img);
+
+    const nombre = document.createElement("h3");
+    nombre.textContent = prod.nombre;
+
+    const desc = document.createElement("p");
+    desc.textContent = prod.descripcion;
+
+    const btn = document.createElement("a");
+    btn.classList.add("comprar");
+    btn.textContent = "Comprar";
+    btn.href = `mailto:mateomomazostristes@gmail.com?subject=Mat-3D Shop - ${prod.nombre}`;
+
+    card.appendChild(imgDiv);
+    card.appendChild(nombre);
+    card.appendChild(desc);
+    card.appendChild(btn);
+
+    productList.appendChild(card);
   });
 }
 
-// Mostrar todo al cargar
-mostrarProductos(productos);
-
-// BUSCADOR
-buscador.addEventListener("input", () => {
-  const texto = buscador.value.toLowerCase().trim();
-
-  if (texto === "") {
-    mostrarProductos(productos);
-    return;
-  }
-
-  const filtrados = productos.filter(p =>
-    p.nombre.toLowerCase() === texto ||
-    p.categoria.toLowerCase().includes(texto) ||
-    p.keywords.some(k => k.toLowerCase().includes(texto))
+// Filtrado por búsqueda (nombre o categoría)
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  const filtered = productos.filter(p => 
+    p.nombre.toLowerCase().includes(query) || p.categoria.toLowerCase().includes(query)
   );
-
-  mostrarProductos(filtrados);
+  renderProductos(filtered);
 });
+
+// Render inicial
+renderProductos(productos);
