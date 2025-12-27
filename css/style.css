@@ -71,7 +71,7 @@ main {
   border-radius: 30px;
   box-shadow: 0 12px 28px rgba(0,0,0,0.1);
   width: 500px;
-  padding: 25px;
+  padding: 35px 25px 25px 25px; /* padding-top aumentado para que el texto no se corte */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -106,7 +106,7 @@ main {
 }
 
 .product-card h3 {
-  margin: 15px 0 12px;
+  margin: 20px 0 12px; /* margen superior aumentado */
   font-size: 1.6em;
   color: #111;
 }
@@ -114,6 +114,7 @@ main {
 .product-card p {
   font-size: 1.05em;
   color: #555;
+  margin-top: 10px;   /* margen superior para separar del título */
   margin-bottom: 18px;
 }
 
