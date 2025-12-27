@@ -1,23 +1,23 @@
 const productList = document.getElementById("product-list");
 const searchInput = document.getElementById("searchInput");
 
-// Función para renderizar productos
 function renderProductos(lista) {
   productList.innerHTML = "";
   lista.forEach(prod => {
     const card = document.createElement("div");
     card.classList.add("product-card");
 
+    // Solo la imagen arriba
     const imgDiv = document.createElement("div");
     imgDiv.classList.add("product-image");
-
     const img = document.createElement("img");
     img.src = prod.imagen;
-    img.alt = prod.nombre;
+    img.alt = prod.nombre; // accesibilidad, no se muestra
     imgDiv.appendChild(img);
 
-    const nombre = document.createElement("h3");
-    nombre.textContent = prod.nombre;
+    // Contenedor de texto abajo
+    const textDiv = document.createElement("div");
+    textDiv.classList.add("product-text");
 
     const desc = document.createElement("p");
     desc.textContent = prod.descripcion;
@@ -27,16 +27,17 @@ function renderProductos(lista) {
     btn.textContent = "Comprar";
     btn.href = `mailto:mateomomazostristes@gmail.com?subject=Mat-3D Shop - ${prod.nombre}`;
 
+    textDiv.appendChild(desc);
+    textDiv.appendChild(btn);
+
     card.appendChild(imgDiv);
-    card.appendChild(nombre);
-    card.appendChild(desc);
-    card.appendChild(btn);
+    card.appendChild(textDiv);
 
     productList.appendChild(card);
   });
 }
 
-// Filtrado por búsqueda (nombre o categoría)
+// Buscador dinámico
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase();
   const filtered = productos.filter(p => 
