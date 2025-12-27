@@ -1,105 +1,57 @@
-/* PALETA PASTEL - MATEO 3D SHOP */
-
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  margin: 0;
-  background-color: #f8f9fa;
-  color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
 }
 
-/* HEADER */
-
-header {
-  text-align: center;
-  padding: 30px 20px;
-  background-color: #e9ecef;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.2em;
-}
-
-header p {
-  margin: 5px 0 20px;
-  color: #555;
-}
-
-#buscador {
-  width: 80%;
-  max-width: 400px;
-  padding: 12px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  font-size: 1em;
-}
-
-/* PRODUCTOS */
-
-main {
-  padding: 30px;
-}
-
-#productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.producto {
+.product-card {
   background-color: #ffffff;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  text-align: center;
-  transition: transform 0.2s ease;
+  border-radius: 20px;
+  padding: 20px;
+  width: 540px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.producto:hover {
-  transform: translateY(-5px);
+.product-image {
+  width: 500px;
+  height: 500px;
+  background-color: #f2f2f2;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.producto img {
+.product-image img {
   width: 100%;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
 }
 
-.producto h3 {
-  margin: 15px 0 10px;
+.product-card h3 {
+  margin: 10px 0 5px;
 }
 
-.producto p {
-  font-size: 0.95em;
+.product-card p {
+  text-align: center;
+  font-size: 14px;
   color: #555;
 }
 
-/* BOTÓN COMPRAR */
-
-.comprar {
-  display: inline-block;
-  margin-top: 12px;
+.product-card button {
+  margin-top: 10px;
   padding: 10px 20px;
-  background-color: #bde0fe;
-  color: #000;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
+  border: none;
+  border-radius: 12px;
+  background-color: #c7d2fe;
+  cursor: pointer;
 }
 
-.comprar:hover {
-  background-color: #a2d2ff;
-}
-
-/* FOOTER */
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #e9ecef;
-  color: #666;
+.product-card button:hover {
+  background-color: #a5b4fc;
 }
